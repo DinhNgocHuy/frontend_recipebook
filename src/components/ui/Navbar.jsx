@@ -7,18 +7,42 @@ export default function Navbar({ user, onLogout }) {
     return (
         <nav className="bg-white/80 backdrop-blur sticky top-0 z-40 border-b">
             <div className="container-page flex h-14 items-center gap-4">
-                <Link to="/" className="font-semibold">🍳 RecipeBook</Link>
-                <Link to="/recipes" className="text-sm text-gray-700 hover:text-gray-900">Recipes</Link>
-                <Link to="/blogs" className="text-sm text-gray-700 hover:text-gray-900">Blog</Link>
+                <Link to="/" className="font-semibold flex items-center gap-2">
+                    <img src="./logo.png" className="h-10 w-10" alt="" />
+                    <span className="text-sky-500 text-2xl font-bold">RecipeBook</span>
+                </Link>
+                <Link
+                    to="/recipes"
+                    className="text-sm text-gray-700 hover:text-gray-900"
+                >
+                    Recipes
+                </Link>
+                <Link
+                    to="/blogs"
+                    className="text-sm text-gray-700 hover:text-gray-900"
+                >
+                    Blog
+                </Link>
                 <div className="ml-auto flex items-center gap-3">
                     {!user ? (
                         <>
-                            <Link to="/login" className="text-sm text-gray-700 hover:text-gray-900">Đăng nhập</Link>
-                            <Link to="/register"><Button variant="primary" size="sm">Đăng ký</Button></Link>
+                            <Link
+                                to="/login"
+                                className="text-sm text-gray-700 hover:text-gray-900"
+                            >
+                                Đăng nhập
+                            </Link>
+                            <Link to="/register">
+                                <Button variant="primary" size="sm">
+                                    Đăng ký
+                                </Button>
+                            </Link>
                         </>
                     ) : (
                         <>
-                            <Button onClick={() => navigate("/recipes/create")}>+ Tạo công thức</Button>
+                            <Button onClick={() => navigate("/recipes/create")}>
+                                + Tạo công thức
+                            </Button>
                             <div className="flex items-center space-x-2">
                                 <Link to="/profile" className="flex items-center">
                                     <img
@@ -29,7 +53,9 @@ export default function Navbar({ user, onLogout }) {
                                     <span className="text-gray-700 ml-2">{user.fullname}</span>
                                 </Link>
                             </div>
-                            <Button variant="outline" size="sm" onClick={onLogout}>Đăng xuất</Button>
+                            <Button variant="outline" size="sm" onClick={onLogout}>
+                                Đăng xuất
+                            </Button>
                         </>
                     )}
                 </div>

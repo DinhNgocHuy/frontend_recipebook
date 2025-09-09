@@ -50,6 +50,7 @@ export default function ProfilePage() {
         if (r?.user) dispatch(setUser(r.user));
       }
       alert("Cập nhật hồ sơ thành công");
+      window.location.reload();
     } catch (err) {
       console.error("Update profile error:", err);
       alert(err?.data?.message || "Cập nhật thất bại");

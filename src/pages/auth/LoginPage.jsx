@@ -55,7 +55,11 @@ export default function LoginPage() {
                 <Button type="submit" disabled={isLoading} className="w-full">
                     {isLoading ? "Đang đăng nhập..." : "Đăng nhập"}
                 </Button>
-
+                <div className="flex justify-end">
+                    <Link to="/forgot-password" className="text-sm text-sky-600 hover:underline">
+                        Quên mật khẩu?
+                    </Link>
+                </div>
                 <p className="text-center text-sm text-gray-500">
                     Chưa có tài khoản? <Link to="/register" className="text-sky-600 hover:underline">Đăng ký</Link>
                 </p>

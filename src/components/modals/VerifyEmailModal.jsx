@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Modal from "../ui/Modal";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
@@ -7,10 +8,11 @@ import {
     useRequestVerifyEmailMutation,
     useConfirmVerifyCodeMutation,
 } from "../../store/api/authApi";
-import { setUser } from "../../store/slices/authSlice";
+import { setUser, logout } from "../../store/slices/authSlice";
 
 export default function VerifyEmailModal({ open, onClose, afterVerified }) {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const user = useSelector((s) => s.auth.user);
     const [code, setCode] = useState("");
     const [msg, setMsg] = useState("");
@@ -40,6 +42,11 @@ export default function VerifyEmailModal({ open, onClose, afterVerified }) {
             setMsg("Xác thực thành công!");
             afterVerified?.();
             onClose?.();
+            setTimeout(() => {
+                dispatch(logout())
+                navigate("/login", { replace: true })
+                location.reload()
+            }, 1500);
         } catch (e) {
             setMsg(e?.data?.message || "Mã không đúng hoặc đã hết hạn.");
         }

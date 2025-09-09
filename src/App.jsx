@@ -16,6 +16,9 @@ import ProfilePage from "./pages/user/ProfilePage";
 import VerifyEmailPage from "./pages/auth/VerifyEmailPage";
 import CreatRecipePage from "./pages/recipes/CreateRecipePage";
 import UpdateRecipePage from "./pages/recipes/UpdateRecipePage";
+import ForgotPasswordPage from "./pages/auth/ForgotPasswordPage";
+import ResetPasswordTokenPage from "./pages/auth/ResetPasswordTokenPage";
+import ResetPasswordCodePage from "./pages/auth/ResetPasswordCodePage";
 
 function Layout({ children }) {
   return <main className="py-6">{children}</main>;
@@ -52,6 +55,9 @@ export default function App() {
           </Route>
 
           <Route path="/verify-email" element={<VerifyEmailPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/reset-password" element={<ResetPasswordTokenPage />} />
+          <Route path="/reset-password/code" element={<ResetPasswordCodePage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
