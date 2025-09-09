@@ -2,7 +2,6 @@
 
 Ứng dụng **Frontend RecipeBook** – giao diện web cho hệ thống Sổ tay Công Thức Nấu Ăn, xây bằng **React + Vite** và **Redux Toolkit**. Dự án kết nối tới backend Express/MongoDB (đã triển khai riêng) để cung cấp các tính năng đăng ký/đăng nhập, xác thực email, quên mật khẩu, quản lý công thức, blog, đánh giá & bình luận.
 
-> Lưu ý: README này được viết theo stack chuẩn của dự án React + Vite của bạn. Nếu cấu trúc thư mục có khác, bạn chỉ cần cập nhật lại phần “Cấu trúc thư mục”.
 
 ---
 
