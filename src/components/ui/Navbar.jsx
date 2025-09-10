@@ -9,7 +9,7 @@ export default function Navbar({ user, onLogout }) {
             <div className="container-page flex h-14 items-center gap-4">
                 <Link to="/" className="font-semibold flex items-center gap-2">
                     <img src="./logo.png" className="h-10 w-10" alt="" />
-                    <span className="text-sky-500 text-2xl font-bold">RecipeBook</span>
+                    <span className="text-sky-500 text-2xl font-bold"> Website Recipe  Book</span>
                 </Link>
                 <Link
                     to="/recipes"
